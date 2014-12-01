@@ -1,6 +1,4 @@
 
-<html>
-<body>
 
 <?php 
 
@@ -11,31 +9,19 @@ $achill= 685;
 $ballybunion = 3701;
 $bundoran = 50;
 $dublin = 694;
+$sRating = array();
+$fRating = array();
+$tripAdvisor_rating = array();
 
-
-   // $json1=file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address=bundoran&key=AIzaSyCBa9HNzhKXsXl8EEHeEdZKACW9Cz6_0d8");
-   // $data2 = json_decode($json1, true);
-   // echo var_dump($data2);
- 
-
-// echo $data2['results'][0]['geometry']['location']['lat'];
-
- 
-
- // Access the magicseaweed Api to get surf Data
 
 if (isset($_POST['location'])){
-  $json=file_get_contents("http://magicseaweed.com/api/Jp5AaQj52uwZoSD0YJXP0bdIthSvtV54/forecast/?spot_id={$_POST['location']}&timestamp");
+  $json=file_get_contents("http://magicseaweed.com/api/Jp5AaQj52uwZoSD0YJXP0bdIthSvtV54/forecast/?spot_id=10&timestamp");
 
 
 
 
  $data = json_decode($json, true);
- // echo $data[0]["timestamp"] . " sskkjkjhiubbiuhkjb,mhiun";
- // echo  var_dump($data);
- // echo "hhhhhhh" . 5 * round($data[0]['swell']['components']['combined']['direction'])/5;
- // echo "hhhhhhh" . number_format((int)($data[0]['swell']['components']['combined']['direction']));
-// echo $data[0]['condition']['temperature'];
+ 
     $timestamp0 = $data[0]['timestamp']  ;
     $actualtime0= date(" g a",$timestamp0); 
     $timestamp1 = $data[1]['timestamp']  ;
@@ -52,7 +38,7 @@ if (isset($_POST['location'])){
     $actualtime6= date("g a",$timestamp6); 
     $timestamp7 = $data[7]['timestamp']  ;
     $actualtime7= date("g a",$timestamp7);  
-$f="wi-night-snow:before ";
+
 
 
 
@@ -190,9 +176,7 @@ $locationdata ="$val Surf Conditions";
 
 $url = "https://api.eancdn.com/ean-services/rs/hotel/v3/list?cid=55505&minorRev=99&apiKey=me3pheakz8v4s4da9u7g48jc&locale=en_US$useGeoCoder=true&_type=json&&currencyCode=EURO&latitude=$latitude&longitude=$longitude&Island&searchRadius=20&sort=PROXIMITY&PRICE&propertyCategory=5&arrivalDate=31/10/2014";
     $resulti = file_get_contents($url);
-    //echo $result;
-    // $data1 = json_encode($result, true);
-    // var_dump($data1);
+   
     if (!is_array($data->HotelListResponse->HotelList->HotelSummary))
         // A simple cast using (array) won't work here - it would convert the HotelSummary object itself rather than wrapping it inside of an array.
         $data->HotelListResponse->HotelList->HotelSummary = array($data->HotelListResponse->HotelList->HotelSummary);
@@ -215,5 +199,3 @@ $url = "https://api.eancdn.com/ean-services/rs/hotel/v3/list?cid=55505&minorRev=
       $v2=$data1['HotelListResponse']['HotelList']['HotelSummary'][2]['deepLink'];
       $v3=$data1['HotelListResponse']['HotelList']['HotelSummary'][3]['deepLink'];
 ?>
-</body>
-</head>

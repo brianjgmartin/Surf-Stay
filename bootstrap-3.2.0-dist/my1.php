@@ -25,7 +25,14 @@
     </script>
 
 </head>
-<body background="surfimage.jpg">
+ <div class="jumbotron">
+        <h1>Surf & Stay</h1>
+        <p>Please choose a surf location Find the latest forecsat and hotels in that area</p>
+        <p>
+  
+        </p>
+      </div>
+<body class="jumbotron">
 
     <div class="bs-example">
         <form name="m.php"  method="POST">
@@ -78,7 +85,9 @@
         </thead>
         <tr class="active">
             <td><strong><?= $actualtime0?></strong></td>
-            <td><?php $sRating = []; ?> <?php $fRating = [];
+            <td>
+            <?php 
+
                     for ( $i = 0; $i < $data[0]['solidRating']; $i++) {
                         (array_push($sRating, '<img src="http://cdnimages.magicseaweed.com/star_filled.png" />'));
                          echo $sRating[$i];
@@ -232,13 +241,7 @@
      <div  class="col-md-6">
 
     <table class="table table-bordered">
-      <!--   <colgroup>
-        <col span="1" style="background-color:#afd9ee">
-        <col style="background-color:#fff">
-        <col style="background-color:#afd9ee">
-        <col style="background-color:#fff">
-    <col style="background-color:#afd9ee">
-      </colgroup> -->
+     
         <thead>
             <tr style="background-color:#afd9ee">
                 <th>Hotel</th>
@@ -252,7 +255,7 @@
                 <td><?= $data1['HotelListResponse']['HotelList']['HotelSummary'][0]['name']?></td>
                 <td><?= $data1['HotelListResponse']['HotelList']['HotelSummary'][0]['address1']?>,<?= $data1['HotelListResponse']['HotelList']['HotelSummary'][0]['city']?></td>
 <td><?= number_format((float)($data1['HotelListResponse']['HotelList']['HotelSummary'][0]['proximityDistance']), 1, '.', '');?></td>                <td><a href="<?= $v0?>">View</a></td>
-                 <td><?php $tripAdvisor_rating = [];
+                 <td><?php 
 
      for ( $i = 0; $i < $data1['HotelListResponse']['HotelList']['HotelSummary'][0]['tripAdvisorRating']; $i++) {
         array_push($tripAdvisor_rating, '<img src="http://cdnimages.magicseaweed.com/star_filled.png" />');
@@ -266,7 +269,7 @@
                 <td><?= $data1['HotelListResponse']['HotelList']['HotelSummary'][1]['address1']?>,<?= $data1['HotelListResponse']['HotelList']['HotelSummary'][1]['city']?></td>
                 <td><?= number_format((float)($data1['HotelListResponse']['HotelList']['HotelSummary'][1]['proximityDistance']), 1, '.', '');?></td>
                 <td><a href="<?= $v1?>">View</a></td>
-                 <td><?php $tripAdvisor_rating = [];
+                 <td><?php 
 
      for ( $i = 0; $i < $data1['HotelListResponse']['HotelList']['HotelSummary'][1]['tripAdvisorRating']; $i++) {
         array_push($tripAdvisor_rating, '<img src="http://cdnimages.magicseaweed.com/star_filled.png" />');
@@ -279,7 +282,7 @@
                  <td><?= $data1['HotelListResponse']['HotelList']['HotelSummary'][2]['name']?></td>
                 <td><?= $data1['HotelListResponse']['HotelList']['HotelSummary'][2]['address1']?>,<?= $data1['HotelListResponse']['HotelList']['HotelSummary'][2]['city']?></td>
 <td><?= number_format((float)($data1['HotelListResponse']['HotelList']['HotelSummary'][2]['proximityDistance']), 1, '.', '');?></td>                <td><a href="<?= $v2?>">View</a></td>
-                 <td><?php $tripAdvisor_rating = [];
+                 <td><?php 
 
      for ( $i = 0; $i < $data1['HotelListResponse']['HotelList']['HotelSummary'][2]['tripAdvisorRating']; $i++) {
         array_push($tripAdvisor_rating, '<img src="http://cdnimages.magicseaweed.com/star_filled.png" />');
@@ -293,7 +296,7 @@
                  <td><?= $data1['HotelListResponse']['HotelList']['HotelSummary'][3]['name']?></td>
                 <td><?= $data1['HotelListResponse']['HotelList']['HotelSummary'][3]['address1']?>,<?= $data1['HotelListResponse']['HotelList']['HotelSummary'][3]['city']?></td>
 <td><?= number_format((float)($data1['HotelListResponse']['HotelList']['HotelSummary'][3]['proximityDistance']), 1, '.', '');?></td>                <td><a href="<?= $v3?>">View</a></td>
-                 <td><?php $tripAdvisor_rating = [];
+                 <td><?php 
 
      for ( $i = 0; $i < $data1['HotelListResponse']['HotelList']['HotelSummary'][3]['tripAdvisorRating']; $i++) {
         array_push($tripAdvisor_rating, '<img src="http://cdnimages.magicseaweed.com/star_filled.png" />');
@@ -306,7 +309,7 @@
                  <td><?= $data1['HotelListResponse']['HotelList']['HotelSummary'][4]['name']?></td>
                 <td><?= $data1['HotelListResponse']['HotelList']['HotelSummary'][4]['address1']?>,<?= $data1['HotelListResponse']['HotelList']['HotelSummary'][4]['city']?></td>
 <td><?= number_format((float)($data1['HotelListResponse']['HotelList']['HotelSummary'][4]['proximityDistance']), 1, '.', '');?></td>                <td><a href="<?= $v3?>">View</a></td>
-                 <td><?php $tripAdvisor_rating = [];
+                 <td><?php 
 
      for ( $i = 0; $i < $data1['HotelListResponse']['HotelList']['HotelSummary'][4]['tripAdvisorRating']; $i++) {
         array_push($tripAdvisor_rating, '<img src="http://cdnimages.magicseaweed.com/star_filled.png" />');
