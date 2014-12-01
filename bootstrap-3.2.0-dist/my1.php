@@ -25,14 +25,10 @@
     </script>
 
 </head>
- <div class="jumbotron">
-        <h1>Surf & Stay</h1>
-        <p>Please choose a surf location Find the latest forecsat and hotels in that area</p>
-        <p>
-  
-        </p>
-      </div>
+
 <body class="jumbotron">
+    <h1 align="center" color="blue"> Surf & Stay</h1>
+    <p align="center"> Please Choose a location to view surf conditions and Hotels located in that area</p>
 
     <div class="bs-example">
         <form name="m.php"  method="POST">
@@ -43,7 +39,7 @@
                         <select type="hidden"onchange="submit()" name="location" class="selectpicker show-tick form-control" >
                             <li class="dropdown" >
 
-                                 <option >Choose Location</option>
+                                 <option>Choose Beach Break</option>
                                  <option value="685">Achill</option>
                                  <option value="3701">Ballybunion</option>
                                  <option value="1283">Banna Beach</option>
@@ -75,7 +71,7 @@
       
         <thead>
             <tr style="background-color:#afd9ee">
-                <th>Time</th>
+                <th><? echo $today?></th>
                 <th>Rating<i class="<?= $f?>"></i></th>
                 <th>Surf</th>
                 <th>Swell</th>
@@ -99,7 +95,7 @@
         </td>
 
             <td><strong><?= number_format((int)($data[0]['swell']['absMinBreakingHeight']));?> - <?= number_format((int)($data[0]['swell']['absMaxBreakingHeight']));?></strong> <small><?= $data[1]['swell']['unit']?></small></td>            
-            <td><strong><?= $data[0]['swell']['components']['combined']['period'];?><small> s </small></stong><i class="msw-swa-<?= ($data[0]['swell']['components']['combined']['direction']);?>"></i></td>
+            <td><?= $data[1]['swell']['components']['combined']['period'];?><small> s </small> <i class="msw-swa-<?= 5 * round($data[1]['swell']['components']['combined']['direction']/5);?>"></i></td>
             <td><strong><?= $data[0]['wind']['speed']?> </strong><small><?= $data[0]['wind']['unit']?></smalll>  <i class="msw-ssa-<?= 5 * round($data[0]['wind']['direction']/5);?>"></i></td>
             <td><?= $data[0]['condition']['temperature']?><small>c</small> <img src="<?= $w1?>"></td>
     </tr>
@@ -123,7 +119,6 @@
      
     </tr>
         <tr class="active">
-        <!-- <td><?= $data1['HotelListResponse']['HotelList']['HotelSummary'][0]['name']?></td>  -->
             <td><strong><?= $actualtime2?></strong></td>
               <td><?php
                     for ( $i = 0; $i < $data[2]['solidRating']; $i++) {
@@ -136,7 +131,7 @@
                 }?></td>
 <td><strong><?= number_format((int)($data[2]['swell']['absMinBreakingHeight']));?> - <?= number_format((int)($data[2]['swell']['absMaxBreakingHeight']));?></strong> <small><?= $data[3]['swell']['unit']?></small></td>            
 <td><?= $data[2]['swell']['components']['combined']['period'];?> <small> s </small> <i class="msw-swa-<?= 5 * round($data[2]['swell']['components']['combined']['direction']/5);?>"></i></td>
-    <td><strong><?= $data[2]['wind']['speed']?>s</strong><small><?= $data[0]['wind']['unit']?></smalll>  <i class="msw-ssa-<?= 5 * round($data[2]['wind']['direction']/5);?>"></i></td>  
+    <td><strong><?= $data[2]['wind']['speed']?></strong><small><?= $data[0]['wind']['unit']?></smalll>  <i class="msw-ssa-<?= 5 * round($data[2]['wind']['direction']/5);?>"></i></td>  
     <td><?= $data[2]['condition']['temperature']?><small>c</small> <img src="<?= $w3?>"></td>
      
     </tr>
@@ -156,7 +151,7 @@
 <td><strong><?= number_format((int)($data[3]['swell']['absMinBreakingHeight']));?> - <?= number_format((int)($data[3]['swell']['absMaxBreakingHeight']));?></strong> <small><?= $data[4]['swell']['unit']?></small></td>            
 <td><?= $data[3]['swell']['components']['combined']['period'];?> <small> s </small> <i class="msw-swa-<?= 5 * round($data[3]['swell']['components']['combined']['direction']/5);?>"></i></td>
     <td><strong><?= $data[3]['wind']['speed']?> </strong><small><?= $data[0]['wind']['unit']?></smalll>  <i class="msw-ssa-<?= 5 * round($data[3]['wind']['direction']/5);?>"></i></td> 
-    <td><?= $data[3]['condition']['temperature']?><small>c</small> <img src="<?= $w4?>"></td>
+    <td><?= $data[3]['condition']['temperature']?><small>c</small> <img src="<?= $w5?>"></td>
      
     </tr>
 

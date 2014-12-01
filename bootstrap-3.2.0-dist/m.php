@@ -2,13 +2,8 @@
 
 <?php 
 
-$today = date("M/D/Y");
-// echo $today;
-$weekday = date('l - F j', strtotime($today));
-$achill= 685;
-$ballybunion = 3701;
-$bundoran = 50;
-$dublin = 694;
+$today = date("D");
+$weekday = date('D F j', strtotime($today));
 $sRating = array();
 $fRating = array();
 $tripAdvisor_rating = array();
@@ -16,9 +11,6 @@ $tripAdvisor_rating = array();
 
 if (isset($_POST['location'])){
   $json=file_get_contents("http://magicseaweed.com/api/Jp5AaQj52uwZoSD0YJXP0bdIthSvtV54/forecast/?spot_id=10&timestamp");
-
-
-
 
  $data = json_decode($json, true);
  
@@ -98,7 +90,7 @@ elseif($_POST['location'] == '986'){
   $longitude = $data2['results'][0]['geometry']['location']['lng'];
 }
 elseif($_POST['location'] == '1283'){
-  $val= " Banna Beach ";
+  $val= "Mullaghmore";
   $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=AIzaSyCBa9HNzhKXsXl8EEHeEdZKACW9Cz6_0d8");
   $data2 = json_decode($json1, true);
   $latitude = $data2['results'][0]['geometry']['location']['lat'];
