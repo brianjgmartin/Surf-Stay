@@ -10,7 +10,7 @@ $tripAdvisor_rating = array();
 
 
 if (isset($_POST['location'])){
-  $json=file_get_contents("http://magicseaweed.com/api/Jp5AaQj52uwZoSD0YJXP0bdIthSvtV54/forecast/?spot_id=10&timestamp");
+  $json=file_get_contents("http://magicseaweed.com/api/Jp5AaQj52uwZoSD0YJXP0bdIthSvtV54/forecast/?spot_id={$_POST['location']}&timestamp");
 
  $data = json_decode($json, true);
  
