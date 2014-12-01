@@ -17,7 +17,10 @@
 
  
   <?php include './m.php';?>
- 
+ <style>
+  small    {color:#339933};
+  h3    {color:#3C94CF}
+</style>
     <script type="text/javascript">
         $(document).ready(function(){ 
         $("#myTab li:eq(1) a").tab('show');
@@ -27,9 +30,10 @@
 </head>
 
 <body class="jumbotron">
-    <h1 align="center" color="blue"> Surf & Stay</h1>
-    <p align="center"> View latest Surf Conditions and Local Accomodation</p>
-
+    <div style="padding-top: 0px;">
+    <h1 style="color:#3D5C5C" align="center"> Surf & Stay</h1>
+    <p style="color:#3D5C5C" align="center"z> View latest Surf Conditions and Local Accomodation</p>
+</div>
     <div class="bs-example">
        
             <ul class="nav nav-tabs navbar-collapse" id="myTab">
@@ -66,11 +70,11 @@
             <div id="dropdown2" class="tab-pane fade" >
                 <!-- <h3><?= $weekday?></h3> -->
                     <div  class="col-md-6">
-  <h3 align="center">Surf Conditions</h3>
+  <h3 style="color:#3D5C5C" align="center">Surf Conditions</h3>
         <table class="table table-bordered">
       
         <thead>
-            <tr style="background-color:#afd9ee">
+            <tr style="background-color:#D1E0E0">
                 <th><? echo $today?></th>
                 <th>Rating<i class="<?= $f?>"></i></th>
                 <th>Surf</th>
@@ -236,9 +240,9 @@
      <div  class="col-md-6">
 
     <table class="table table-bordered">
-      <h3 align="center">Local Hotels</h3>
+      <h3 style="color:#3D5C5C" align="center">Local Hotels</h3>
         <thead>
-            <tr style="background-color:#afd9ee">
+            <tr style="background-color:#D1E0E0">
                 <th>Hotel</th>
                 <th>Adrress</th>
                 <th>Distance </th>
