@@ -181,7 +181,7 @@ $url = "https://api.eancdn.com/ean-services/rs/hotel/v3/list?cid=55505&minorRev=
 
 
     $data1 = json_decode($resulti, true);
-      echo var_dump($data1);
+     
        $v=$data1['HotelListResponse']['HotelList']['HotelSummary'][0]['lowRate'];
    // echo $v;
  $var =number_format((float)($data1['HotelListResponse']['HotelList']['HotelSummary'][0]['proximityDistance']), 1, '.', '');

@@ -28,7 +28,7 @@
 
 <body class="jumbotron">
     <h1 align="center" color="blue"> Surf & Stay</h1>
-    <p align="center"> Please Choose a location to view surf conditions and Hotels located in that area</p>
+    <p align="center"> View latest Surf Conditions and Local Accomodation</p>
 
     <div class="bs-example">
        
