@@ -2,7 +2,7 @@
 
 <?php 
 
-$today = date("D");
+$today = date("t/m");
 $weekday = date('D F j', strtotime($today));
 $sRating = array();
 $fRating = array();
@@ -181,7 +181,7 @@ $url = "https://api.eancdn.com/ean-services/rs/hotel/v3/list?cid=55505&minorRev=
 
 
     $data1 = json_decode($resulti, true);
-     // echo var_dump($data1);
+      echo var_dump($data1);
        $v=$data1['HotelListResponse']['HotelList']['HotelSummary'][0]['lowRate'];
    // echo $v;
  $var =number_format((float)($data1['HotelListResponse']['HotelList']['HotelSummary'][0]['proximityDistance']), 1, '.', '');
@@ -190,4 +190,5 @@ $url = "https://api.eancdn.com/ean-services/rs/hotel/v3/list?cid=55505&minorRev=
       $v1=$data1['HotelListResponse']['HotelList']['HotelSummary'][1]['deepLink'];
       $v2=$data1['HotelListResponse']['HotelList']['HotelSummary'][2]['deepLink'];
       $v3=$data1['HotelListResponse']['HotelList']['HotelSummary'][3]['deepLink'];
+      $v4=$data1['HotelListResponse']['HotelList']['HotelSummary'][4]['deepLink'];
 ?>

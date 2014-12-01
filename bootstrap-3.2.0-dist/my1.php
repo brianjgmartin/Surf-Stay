@@ -31,8 +31,8 @@
     <p align="center"> Please Choose a location to view surf conditions and Hotels located in that area</p>
 
     <div class="bs-example">
-        <form name="m.php"  method="POST">
-            <ul class="nav nav-tabs" id="myTab">
+       
+            <ul class="nav nav-tabs navbar-collapse" id="myTab">
                 <li>     
                     <form name="m.php"  method="POST">
      
@@ -66,7 +66,7 @@
             <div id="dropdown2" class="tab-pane fade" >
                 <!-- <h3><?= $weekday?></h3> -->
                     <div  class="col-md-6">
-
+  <h3 align="center">Surf Conditions</h3>
         <table class="table table-bordered">
       
         <thead>
@@ -236,7 +236,7 @@
      <div  class="col-md-6">
 
     <table class="table table-bordered">
-     
+      <h3 align="center">Local Hotels</h3>
         <thead>
             <tr style="background-color:#afd9ee">
                 <th>Hotel</th>
@@ -247,9 +247,10 @@
             </tr>
         </thead>
             <tr>
-                <td><?= $data1['HotelListResponse']['HotelList']['HotelSummary'][0]['name']?></td>
+                <td><a href="<?= $v0?>"><?= $data1['HotelListResponse']['HotelList']['HotelSummary'][0]['name']?></a></td>
                 <td><?= $data1['HotelListResponse']['HotelList']['HotelSummary'][0]['address1']?>,<?= $data1['HotelListResponse']['HotelList']['HotelSummary'][0]['city']?></td>
-<td><?= number_format((float)($data1['HotelListResponse']['HotelList']['HotelSummary'][0]['proximityDistance']), 1, '.', '');?></td>                <td><a href="<?= $v0?>">View</a></td>
+<td><?= number_format((float)($data1['HotelListResponse']['HotelList']['HotelSummary'][0]['proximityDistance']), 1, '.', '');?> <small>km</small></td>                
+<td><small>€</small> <?= number_format((int)$data1['HotelListResponse']['HotelList']['HotelSummary'][0]['lowRate'])?></td>
                  <td><?php 
 
      for ( $i = 0; $i < $data1['HotelListResponse']['HotelList']['HotelSummary'][0]['tripAdvisorRating']; $i++) {
@@ -260,10 +261,10 @@
                 
             </tr>
             <tr class="active">
-                 <td><?= $data1['HotelListResponse']['HotelList']['HotelSummary'][1]['name']?></td>
+                 <td><a href="<?= $v1?>"><?= $data1['HotelListResponse']['HotelList']['HotelSummary'][1]['name']?></a></td>
                 <td><?= $data1['HotelListResponse']['HotelList']['HotelSummary'][1]['address1']?>,<?= $data1['HotelListResponse']['HotelList']['HotelSummary'][1]['city']?></td>
-                <td><?= number_format((float)($data1['HotelListResponse']['HotelList']['HotelSummary'][1]['proximityDistance']), 1, '.', '');?></td>
-                <td><a href="<?= $v1?>">View</a></td>
+                <td><?= number_format((float)($data1['HotelListResponse']['HotelList']['HotelSummary'][1]['proximityDistance']), 1, '.', '');?> <small>km</small></td>
+                <td><small>€</small> <?= number_format((int)$data1['HotelListResponse']['HotelList']['HotelSummary'][1]['lowRate'])?></td>
                  <td><?php 
 
      for ( $i = 0; $i < $data1['HotelListResponse']['HotelList']['HotelSummary'][1]['tripAdvisorRating']; $i++) {
@@ -274,9 +275,10 @@
                 
             </tr>
                <tr >
-                 <td><?= $data1['HotelListResponse']['HotelList']['HotelSummary'][2]['name']?></td>
+                 <td><a href="<?= $v2?>"><?= $data1['HotelListResponse']['HotelList']['HotelSummary'][2]['name']?></a></td>
                 <td><?= $data1['HotelListResponse']['HotelList']['HotelSummary'][2]['address1']?>,<?= $data1['HotelListResponse']['HotelList']['HotelSummary'][2]['city']?></td>
-<td><?= number_format((float)($data1['HotelListResponse']['HotelList']['HotelSummary'][2]['proximityDistance']), 1, '.', '');?></td>                <td><a href="<?= $v2?>">View</a></td>
+<td><?= number_format((float)($data1['HotelListResponse']['HotelList']['HotelSummary'][2]['proximityDistance']), 1, '.', '');?> <small>km</small></td>                
+<td><small>€</small> <?= number_format((int)$data1['HotelListResponse']['HotelList']['HotelSummary'][2]['lowRate'])?> </td>
                  <td><?php 
 
      for ( $i = 0; $i < $data1['HotelListResponse']['HotelList']['HotelSummary'][2]['tripAdvisorRating']; $i++) {
@@ -288,9 +290,10 @@
             </tr>
              
                <tr class="active">
-                 <td><?= $data1['HotelListResponse']['HotelList']['HotelSummary'][3]['name']?></td>
+                 <td><a href="<?= $v3?>"><?= $data1['HotelListResponse']['HotelList']['HotelSummary'][3]['name']?></a></td>
                 <td><?= $data1['HotelListResponse']['HotelList']['HotelSummary'][3]['address1']?>,<?= $data1['HotelListResponse']['HotelList']['HotelSummary'][3]['city']?></td>
-<td><?= number_format((float)($data1['HotelListResponse']['HotelList']['HotelSummary'][3]['proximityDistance']), 1, '.', '');?></td>                <td><a href="<?= $v3?>">View</a></td>
+<td><?= number_format((float)($data1['HotelListResponse']['HotelList']['HotelSummary'][3]['proximityDistance']), 1, '.', '');?> <small>km</small></td>                
+<td><small>€</small> <?= number_format((int)$data1['HotelListResponse']['HotelList']['HotelSummary'][3]['lowRate'])?> </td>
                  <td><?php 
 
      for ( $i = 0; $i < $data1['HotelListResponse']['HotelList']['HotelSummary'][3]['tripAdvisorRating']; $i++) {
@@ -300,11 +303,12 @@
      }?></td>
                 
             </tr>
-                   <tr >
-                 <td><?= $data1['HotelListResponse']['HotelList']['HotelSummary'][4]['name']?></td>
+                   <tr>
+                <td><a href="<?= $v4?>"><?= $data1['HotelListResponse']['HotelList']['HotelSummary'][4]['name']?></a></td>
                 <td><?= $data1['HotelListResponse']['HotelList']['HotelSummary'][4]['address1']?>,<?= $data1['HotelListResponse']['HotelList']['HotelSummary'][4]['city']?></td>
-<td><?= number_format((float)($data1['HotelListResponse']['HotelList']['HotelSummary'][4]['proximityDistance']), 1, '.', '');?></td>                <td><a href="<?= $v3?>">View</a></td>
-                 <td><?php 
+                <td><?= number_format((float)($data1['HotelListResponse']['HotelList']['HotelSummary'][4]['proximityDistance']), 1, '.', '');?> <small>km</small></td>                
+                <td><small>€</small><?= number_format((int)$data1['HotelListResponse']['HotelList']['HotelSummary'][4]['lowRate'])?> </td>
+                <td><?php 
 
      for ( $i = 0; $i < $data1['HotelListResponse']['HotelList']['HotelSummary'][4]['tripAdvisorRating']; $i++) {
         array_push($tripAdvisor_rating, '<img src="http://cdnimages.magicseaweed.com/star_filled.png" />');
@@ -312,7 +316,7 @@
         echo $r;
      }?></td>
                 
-            </tr>
+                 </tr>
 
       
       </table>
