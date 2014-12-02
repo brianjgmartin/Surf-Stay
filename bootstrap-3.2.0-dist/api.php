@@ -1,7 +1,6 @@
 <?php 
 
-$today = date("t/m");
-$weekday = date('D F j', strtotime($today));
+$date =  date("D-d");
 $sRating = array();
 $fRating = array();
 $tripAdvisor_rating = array();

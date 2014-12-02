@@ -78,7 +78,7 @@
       
         <thead>
             <tr style="background-color:#D1E0E0">
-                <th><? echo $today?></th>
+                <th><? echo $date?></th>
                 <th>Rating<i class="<?= $f?>"></i></th>
                 <th>Surf</th>
                 <th>Swell</th>
