@@ -1,5 +1,3 @@
-
-
 <?php 
 
 $today = date("t/m");
@@ -8,7 +6,7 @@ $sRating = array();
 $fRating = array();
 $tripAdvisor_rating = array();
 
-              // Get Values back from magicseaweed Api By passing in the beach Location
+// Get Values back from magicseaweed Api By passing in the beach Location
 if (isset($_POST['location'])){
   $json=file_get_contents("http://magicseaweed.com/api/Jp5AaQj52uwZoSD0YJXP0bdIthSvtV54/forecast/?spot_id={$_POST['location']}&timestamp");
 
@@ -160,7 +158,6 @@ else{
 }
 $locationdata ="$val Surf Conditions";
 
-
  }
 
 
@@ -176,9 +173,7 @@ $url = "https://api.eancdn.com/ean-services/rs/hotel/v3/list?cid=55505&minorRev=
      
     $data1 = json_decode($resulti, true);
      
-    // $v=$data1['HotelListResponse']['HotelList']['HotelSummary'][0]['lowRate'];
-   
- // $var =number_format((float)($data1['HotelListResponse']['HotelList']['HotelSummary'][0]['proximityDistance']), 1, '.', '');
+      // Link to tripadvisor website
       $v0=$data1['HotelListResponse']['HotelList']['HotelSummary'][0]['deepLink'];
       $v1=$data1['HotelListResponse']['HotelList']['HotelSummary'][1]['deepLink'];
       $v2=$data1['HotelListResponse']['HotelList']['HotelSummary'][2]['deepLink'];

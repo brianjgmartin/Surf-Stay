@@ -19,7 +19,7 @@
   <?php include './api.php';?>
  <style>
   small    {color:#339933};
-  h3    {color:#3C94CF}
+  h3       {color:#3C94CF}
 </style>
     <script type="text/javascript">
         $(document).ready(function(){ 
@@ -42,7 +42,8 @@
      
                         <select type="hidden"onchange="submit()" name="location" class="selectpicker show-tick form-control" >
                             <li class="dropdown" >
-
+                                <!-- In this selection menu I must hard code a value to a location
+                                as the magicseaweed api works using a numerical value which represents a location -->
                                  <option>Choose Beach Break</option>
                                  <option value="685">Achill</option>
                                  <option value="3701">Ballybunion</option>
@@ -85,9 +86,20 @@
                 <th>Weather</th>
             </tr>
         </thead>
+        
 
         <tr class="active">
+
+            <!-- 1 The first Value in the table row is Converting from a timestamp representation to Actual 
+            Human readable Time of Day -->
+
             <td><strong><?= $actualtime0?></strong></td>
+
+            <!-- 2 The Second Row Named Rating is using magicseaweeds own algorithm for providing a rating.
+            Magicseaweed provide a numerical rating for both solid and faded rating.
+            I assign a star to each number provided. (ie) rating of 4 gets 4 stars
+            There are 2 seperate arrays one for solid rating and another for faded 
+            The arrays are then combined  -->
             <td>
             <?php 
 
@@ -100,11 +112,22 @@
                         echo $fRating[$i];
                 }?>
             </td>
-
+            <!-- 3 Surf Conditions. Here I am supplying a range from the minimun predicted wave height to the maximum -->
             <td><strong><?= number_format((int)($data[0]['swell']['absMinBreakingHeight']));?> - <?= number_format((int)($data[0]['swell']['absMaxBreakingHeight']));?></strong> <small><?= $data[1]['swell']['unit']?></small></td>            
+            <!-- 4 The swell includes the period between each wave in seconds. 
+            A higher period allows waves to form for sweet rides dude!
+            The arrow is indicating swell direction. This result is rounded up to the nearest 5
+            as there is only a css image supplied for every 5 degrees. -->
             <td><?= $data[1]['swell']['components']['combined']['period'];?><small> s </small> <i class="msw-swa-<?= 5 * round($data[1]['swell']['components']['combined']['direction']/5);?>"></i></td>
+           <!--  5 Wind speed. Here the code is returning wind speed, direction and wind unit (ie)  mph
+            The wind direction is similar to the swell direction. It must be rounded up to 5 degree segments -->
             <td><strong><?= $data[0]['wind']['speed']?> </strong><small><?= $data[0]['wind']['unit']?></smalll>  <i class="msw-ssa-<?= 5 * round($data[0]['wind']['direction']/5);?>"></i></td>
-            <td><?= $data[0]['condition']['temperature']?><small>c</small> <img src="<?= $w1?>"></td>
+            <!-- 6 Weather. This is returning the temperature and an image of weather conditions 
+            The image maps to a numercial value returned by the api
+            The Temperature must be converted to celcius as it is returning a farenheit value?
+            Not sure id this is beacuase this app is sitting on a data center in the US as 
+            it returns a celcius value locally on  my Laptop with the same code! -->
+            <td><?= number_format((int)$celsius=5/9*($data[0]['condition']['temperature']-32));?><small>c</small> <img src="<?= $w1?>"></td>
         </tr>
 
         <tr>
@@ -249,10 +272,18 @@
             </tr>
         </thead>
             <tr>
+                <!-- 1 The first Field supplied is the name of the accomadation which is also a URL
+                to the triadvors site  -->
                 <td><a href="<?= $v0?>"><?= $data1['HotelListResponse']['HotelList']['HotelSummary'][0]['name']?></a></td>
+                <!-- 2 The second field is the address and city -->
                 <td><?= $data1['HotelListResponse']['HotelList']['HotelSummary'][0]['address1']?>,<?= $data1['HotelListResponse']['HotelList']['HotelSummary'][0]['city']?></td>
+               <!--  3 this column represents the distance the accomodation is located 
+                away from the beach which is rounded to on decimal place in km -->
                 <td><?= number_format((float)($data1['HotelListResponse']['HotelList']['HotelSummary'][0]['proximityDistance']), 1, '.', '');?> <small>km</small></td>                
+                <!-- 4 This is the price of the accomodation as supplied by ean api  -->
                 <td><small>€</small> <?= number_format((int)$data1['HotelListResponse']['HotelList']['HotelSummary'][0]['lowRate'])?></td>
+                <!-- 5 This is the rating of the accomadtion which is supplied as a numerical value
+                The below code adds a image of a star to an array for each number supplied by the rating -->
                 <td><?php 
 
                      for ( $i = 0; $i < $data1['HotelListResponse']['HotelList']['HotelSummary'][0]['tripAdvisorRating']; $i++) {
@@ -325,8 +356,8 @@
 
       
       </table>
-  </div>
-</div>
+    </div>
+    </div>
 
         <script src="../bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
   </body>
