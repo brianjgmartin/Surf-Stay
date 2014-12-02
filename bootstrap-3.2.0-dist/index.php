@@ -16,7 +16,7 @@
     <script type="text/javascript" src="../bootstrap-3.2.0-dist/js/jquery-2.1.1.min.js"></script>
 
  
-  <?php include './m.php';?>
+  <?php include './api.php';?>
  <style>
   small    {color:#339933};
   h3    {color:#3C94CF}
