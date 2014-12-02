@@ -146,7 +146,7 @@
             <td><strong><?= number_format((int)($data[1]['swell']['absMinBreakingHeight']));?> - <?= number_format((int)($data[1]['swell']['absMaxBreakingHeight']));?></strong> <small><?= $data[2]['swell']['unit']?></small></td>            
             <td><?= $data[1]['swell']['components']['combined']['period'];?><small> s </small> <i class="msw-swa-<?= 5 * round($data[1]['swell']['components']['combined']['direction']/5);?>"></i></td>
             <td><strong><?= $data[1]['wind']['speed']?> </strong><small><?= $data[0]['wind']['unit']?></smalll>  <i class="msw-ssa-<?= 5 * round($data[1]['wind']['direction']/5);?>"></i></td>        
-            <td><?= $data[1]['condition']['temperature']?><small>c</small> <img src="<?= $w2?>"></td>
+            <td><?= number_format((int)$celsius=5/9*($data[1]['condition']['temperature']-32));?><small>c</small> <img src="<?= $w2?>"></td>
         </tr>
 
         <tr class="active">
@@ -163,7 +163,7 @@
             <td><strong><?= number_format((int)($data[2]['swell']['absMinBreakingHeight']));?> - <?= number_format((int)($data[2]['swell']['absMaxBreakingHeight']));?></strong> <small><?= $data[3]['swell']['unit']?></small></td>            
             <td><?= $data[2]['swell']['components']['combined']['period'];?> <small> s </small> <i class="msw-swa-<?= 5 * round($data[2]['swell']['components']['combined']['direction']/5);?>"></i></td>
             <td><strong><?= $data[2]['wind']['speed']?></strong><small><?= $data[0]['wind']['unit']?></smalll>  <i class="msw-ssa-<?= 5 * round($data[2]['wind']['direction']/5);?>"></i></td>  
-            <td><?= $data[2]['condition']['temperature']?><small>c</small> <img src="<?= $w3?>"></td>
+            <td><?= number_format((int)$celsius=5/9*($data[2]['condition']['temperature']-32));?><small>c</small> <img src="<?= $w3?>"></td>
         </tr>
       
         <tr>
@@ -180,7 +180,7 @@
             <td><strong><?= number_format((int)($data[3]['swell']['absMinBreakingHeight']));?> - <?= number_format((int)($data[3]['swell']['absMaxBreakingHeight']));?></strong> <small><?= $data[4]['swell']['unit']?></small></td>            
             <td><?= $data[3]['swell']['components']['combined']['period'];?> <small> s </small> <i class="msw-swa-<?= 5 * round($data[3]['swell']['components']['combined']['direction']/5);?>"></i></td>
             <td><strong><?= $data[3]['wind']['speed']?> </strong><small><?= $data[0]['wind']['unit']?></smalll>  <i class="msw-ssa-<?= 5 * round($data[3]['wind']['direction']/5);?>"></i></td> 
-            <td><?= $data[3]['condition']['temperature']?><small>c</small> <img src="<?= $w5?>"></td>
+            <td><?= number_format((int)$celsius=5/9*($data[3]['condition']['temperature']-32));?><small>c</small> <img src="<?= $w5?>"></td>
         </tr>
 
         <tr class="active">
@@ -197,7 +197,7 @@
             <td><strong><?= number_format((int)($data[4]['swell']['absMinBreakingHeight']));?> - <?= number_format((int)($data[4]['swell']['absMaxBreakingHeight']));?></strong> <small><?= $data[4]['swell']['unit']?></small></td>
             <td><?= $data[4]['swell']['components']['combined']['period'];?><small> s </small> <i class="msw-swa-<?= 5 * round($data[4]['swell']['components']['combined']['direction']/5);?>"></i></td>
             <td><strong><?= $data[4]['wind']['speed']?> </strong><small><?= $data[4]['wind']['unit']?></smalll>  <i class="msw-ssa-<?= 5 * round($data[4]['wind']['direction']/5);?>"></i></td>      
-            <td><?= $data[4]['condition']['temperature']?><small>c</small> <img src="<?= $w5?>"></td>
+            <td><?= number_format((int)$celsius=5/9*($data[4]['condition']['temperature']-32));?><small>c</small> <img src="<?= $w5?>"></td>
         </tr>
 
         <tr>
@@ -215,7 +215,7 @@
             <td><strong><?= number_format((int)($data[5]['swell']['absMinBreakingHeight']));?> - <?= number_format((int)($data[5]['swell']['absMaxBreakingHeight']));?></strong> <small><?= $data[4]['swell']['unit']?></small></td>            
             <td><?= $data[5]['swell']['components']['combined']['period'];?><small> s </small> <i class="msw-swa-<?= 5 * round($data[5]['swell']['components']['combined']['direction']/5);?>"></i></td>
             <td><strong><?= $data[5]['wind']['speed']?> </strong><small><?= $data[5]['wind']['unit']?></smalll>  <i class="msw-ssa-<?= 5 * round($data[5]['wind']['direction']/5);?>"></i></td>        
-            <td><?= $data[5]['condition']['temperature']?><small>c</small> <img src="<?= $w6?>" align="center"></td>
+            <td><?= number_format((int)$celsius=5/9*($data[5]['condition']['temperature']-32));?><small>c</small> <img src="<?= $w6?>" align="center"></td>
          </tr>
 
         <tr class="active">
@@ -233,7 +233,7 @@
             <td><strong><?= number_format((int)($data[6]['swell']['absMinBreakingHeight']));?> - <?= number_format((int)($data[6]['swell']['absMaxBreakingHeight']));?></strong> <small><?= $data[4]['swell']['unit']?></small></td>            
             <td><?= $data[6]['swell']['components']['combined']['period'];?><small> s </small> <i class="msw-swa-<?= 5 * round($data[6]['swell']['components']['combined']['direction']/5);?>"></i></td>
             <td><strong><?= $data[6]['wind']['speed']?> </strong><small><?= $data[6]['wind']['unit']?></smalll>  <i class="msw-ssa-<?= 5 * round($data[6]['wind']['direction']/5);?>"></i></td>        
-            <td><?= $data[6]['condition']['temperature']?><small>c</small> <img src="<?= $w7?>"></td>
+            <td><?= number_format((int)$celsius=5/9*($data[6]['condition']['temperature']-32));?><small>c</small> <img src="<?= $w7?>"></td>
         </tr>
       
         <tr>
@@ -251,7 +251,7 @@
             <td><strong><?= number_format((int)($data[7]['swell']['absMinBreakingHeight']));?> - <?= number_format((int)($data[7]['swell']['absMaxBreakingHeight']));?></strong> <small><?= $data[7]['swell']['unit']?></small></td>            
             <td><?= $data[7]['swell']['components']['combined']['period'];?><small> s </small> <i class="msw-swa-<?= 5 * round($data[7]['swell']['components']['combined']['direction']/5);?>"></i></td>
             <td><strong><?= $data[7]['wind']['speed']?> </strong><small><?= $data[0]['wind']['unit']?></smalll>  <i class="msw-ssa-<?= 5 * round($data[7]['wind']['direction']/5);?>"></i></td>        
-            <td><?= $data[7]['condition']['temperature']?><small>c</small> <img src="<?= $w8?>"></td>
+            <td><?= number_format((int)$celsius=5/9*($data[7]['condition']['temperature']-32));?><small>c</small> <img src="<?= $w8?>"></td>
      
         </tr>
     </table>
