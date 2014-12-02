@@ -4,11 +4,14 @@ $date =  date("D-d");
 $sRating = array();
 $fRating = array();
 $tripAdvisor_rating = array();
+$MSW_API_KEY="Jp5AaQj52uwZoSD0YJXP0bdIthSvtV54";
+$google_api_key="AIzaSyCBa9HNzhKXsXl8EEHeEdZKACW9Cz6_0d8";
+
 
 // Get Values back from magicseaweed Api By passing in the beach Location
 if (isset($_POST['location'])){
-  $json=file_get_contents("http://magicseaweed.com/api/Jp5AaQj52uwZoSD0YJXP0bdIthSvtV54/forecast/?spot_id={$_POST['location']}&timestamp");
-
+  $json=file_get_contents("http://magicseaweed.com/api/$MSW_API_KEY/forecast/?spot_id={$_POST['location']}&timestamp");
+    //Convert Data to PHP array
     $data = json_decode($json, true);
     // Convert Timestamop 
     $timestamp0 = $data[0]['timestamp']  ;
@@ -42,7 +45,7 @@ if (isset($_POST['location'])){
 
 if($_POST['location'] == '685'){
   $val = "Achill";
-  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=AIzaSyCBa9HNzhKXsXl8EEHeEdZKACW9Cz6_0d8");
+  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=$google_api_key");
   $data2 = json_decode($json1, true);
   $latitude = $data2['results'][0]['geometry']['location']['lat'];
   $longitude = $data2['results'][0]['geometry']['location']['lng'];
@@ -50,7 +53,7 @@ if($_POST['location'] == '685'){
 
 elseif($_POST['location'] == '3701'){
   $val = "Ballybunion";
-  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=AIzaSyCBa9HNzhKXsXl8EEHeEdZKACW9Cz6_0d8");
+  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=$google_api_key");
   $data2 = json_decode($json1, true);
   $latitude = $data2['results'][0]['geometry']['location']['lat'];
   $longitude = $data2['results'][0]['geometry']['location']['lng'];
@@ -58,7 +61,7 @@ elseif($_POST['location'] == '3701'){
 
 elseif($_POST['location'] == '50'){
   $val = "Bundoran";
-  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=AIzaSyCBa9HNzhKXsXl8EEHeEdZKACW9Cz6_0d8");
+  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=$google_api_key");
   $data2 = json_decode($json1, true);
   $latitude = $data2['results'][0]['geometry']['location']['lat'];
   $longitude = $data2['results'][0]['geometry']['location']['lng'];
@@ -66,91 +69,91 @@ elseif($_POST['location'] == '50'){
 
 elseif($_POST['location'] == '1500'){
   $val= "Easky";
-  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=AIzaSyCBa9HNzhKXsXl8EEHeEdZKACW9Cz6_0d8");
+  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=$google_api_key");
   $data2 = json_decode($json1, true);
   $latitude = $data2['results'][0]['geometry']['location']['lat'];
   $longitude = $data2['results'][0]['geometry']['location']['lng'];
 }
 elseif($_POST['location'] == '1501'){
   $val= "Easky";
-  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=AIzaSyCBa9HNzhKXsXl8EEHeEdZKACW9Cz6_0d8");
+  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=$google_api_key");
   $data2 = json_decode($json1, true);
   $latitude = $data2['results'][0]['geometry']['location']['lat'];
   $longitude = $data2['results'][0]['geometry']['location']['lng'];
 }
 elseif($_POST['location'] == '986'){
   $val= "Carrownisky";
-  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=AIzaSyCBa9HNzhKXsXl8EEHeEdZKACW9Cz6_0d8");
+  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=$google_api_key");
   $data2 = json_decode($json1, true);
   $latitude = $data2['results'][0]['geometry']['location']['lat'];
   $longitude = $data2['results'][0]['geometry']['location']['lng'];
 }
 elseif($_POST['location'] == '1283'){
   $val= "Mullaghmore";
-  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=AIzaSyCBa9HNzhKXsXl8EEHeEdZKACW9Cz6_0d8");
+  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=$google_api_key");
   $data2 = json_decode($json1, true);
   $latitude = $data2['results'][0]['geometry']['location']['lat'];
   $longitude = $data2['results'][0]['geometry']['location']['lng'];
 }
 elseif($_POST['location'] == '829'){
   $val= "Enniscrone";
-  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=AIzaSyCBa9HNzhKXsXl8EEHeEdZKACW9Cz6_0d8");
+  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=$google_api_key");
   $data2 = json_decode($json1, true);
   $latitude = $data2['results'][0]['geometry']['location']['lat'];
   $longitude = $data2['results'][0]['geometry']['location']['lng'];
 }
 elseif($_POST['location'] == '1227'){
   $val= "Garretstown";
-  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=AIzaSyCBa9HNzhKXsXl8EEHeEdZKACW9Cz6_0d8");
+  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=$google_api_key");
   $data2 = json_decode($json1, true);
   $latitude = $data2['results'][0]['geometry']['location']['lat'];
   $longitude = $data2['results'][0]['geometry']['location']['lng'];
 }
 elseif($_POST['location'] == '3717'){
   $val= "Inchodoney";
-  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=AIzaSyCBa9HNzhKXsXl8EEHeEdZKACW9Cz6_0d8");
+  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=$google_api_key");
   $data2 = json_decode($json1, true);
   $latitude = $data2['results'][0]['geometry']['location']['lat'];
   $longitude = $data2['results'][0]['geometry']['location']['lng'];
 }
 elseif($_POST['location'] == '52'){
   $val= "Lahinch";
-  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=AIzaSyCBa9HNzhKXsXl8EEHeEdZKACW9Cz6_0d8");
+  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=$google_api_key");
   $data2 = json_decode($json1, true);
   $latitude = $data2['results'][0]['geometry']['location']['lat'];
   $longitude = $data2['results'][0]['geometry']['location']['lng'];
 }
 elseif($_POST['location'] == '1505'){
   $val= "Mullaghmore";
-  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=AIzaSyCBa9HNzhKXsXl8EEHeEdZKACW9Cz6_0d8");
+  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=$google_api_key");
   $data2 = json_decode($json1, true);
   $latitude = $data2['results'][0]['geometry']['location']['lat'];
   $longitude = $data2['results'][0]['geometry']['location']['lng'];
 }
 elseif($_POST['location'] == '51'){
   $val= "Strandhill";
-  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=AIzaSyCBa9HNzhKXsXl8EEHeEdZKACW9Cz6_0d8");
+  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=$google_api_key");
   $data2 = json_decode($json1, true);
   $latitude = $data2['results'][0]['geometry']['location']['lat'];
   $longitude = $data2['results'][0]['geometry']['location']['lng'];
 }
 elseif($_POST['location'] == '55'){
   $val= "Tramore";
-  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=AIzaSyCBa9HNzhKXsXl8EEHeEdZKACW9Cz6_0d8");
+  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=$google_api_key");
   $data2 = json_decode($json1, true);
   $latitude = $data2['results'][0]['geometry']['location']['lat'];
   $longitude = $data2['results'][0]['geometry']['location']['lng'];
 }
 elseif($_POST['location'] == '694'){
   $val= "Dublin";
-  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=AIzaSyCBa9HNzhKXsXl8EEHeEdZKACW9Cz6_0d8");
+  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=$google_api_key");
   $data2 = json_decode($json1, true);
   $latitude = $data2['results'][0]['geometry']['location']['lat'];
   $longitude = $data2['results'][0]['geometry']['location']['lng'];
 }
 else{
   $val= "ClogherHead";
-  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=AIzaSyCBa9HNzhKXsXl8EEHeEdZKACW9Cz6_0d8");
+  $json1 = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$val}&key=$google_api_key");
   $data2 = json_decode($json1, true);
   $latitude = $data2['results'][0]['geometry']['location']['lat'];
   $longitude = $data2['results'][0]['geometry']['location']['lng'];
